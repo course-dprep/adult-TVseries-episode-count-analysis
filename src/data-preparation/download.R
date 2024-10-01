@@ -1,17 +1,17 @@
 # Load required packages
 library(tidyverse)
-library(reshape2)
 
-# Check if 'data' directory exists; if not, create it
-if (!dir.exists("data")) {
-  dir.create("data")
+# Set the correct path to the root 'data' directory
+data_dir <- "../../data"  # Adjusted to store in the root data directory
+if (!dir.exists(data_dir)) {
+  dir.create(data_dir, recursive = TRUE)
 }
 
 # DOWNLOAD DATA
 
 ## Function to download data and save as CSV
 download_data <- function(url, filename) {
-  download.file(url = url, destfile = paste0(filename, ".csv"))
+  download.file(url = url, destfile = paste0(data_dir, "/", filename, ".csv"))
 }
 
 # URLs for the IMDb datasets
@@ -21,20 +21,14 @@ urls <- c(
   'https://datasets.imdbws.com/title.episode.tsv.gz'
 )
 
-# Use relative paths to save the data in the 'data' directory (relative to the current working directory)
+# Filenames for the CSV files
 filenames <- c(
-  "data/title_basics",
-  "data/title_ratings",
-  "data/title_episodes"
+  "title_basics",
+  "title_ratings",
+  "title_episodes"
 )
 
-# Download and save each file as CSV
+# Download and save each file as CSV in the root 'data' directory
 for (i in 1:length(urls)) {
   download_data(urls[i], filenames[i])
 }
-
-# Verify the downloaded data
-title_basics <- read_delim("data/title_basics.csv", delim = '\t', na = '\\N')
-title_ratings <- read_delim("data/title_ratings.csv", delim = '\t', na = '\\N')
-title_episodes <- read_delim("data/title_episodes.csv", delim = '\t', na = '\\N')
-

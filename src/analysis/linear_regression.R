@@ -1,8 +1,8 @@
 # Load required packages
 library(tidyverse)
 
-# Define relative paths for input
-input_dir <- "gen/temp"
+input_dir <- "../../gen/temp"  # Path to the cleaned merged data
+output_dir <- "../../gen/output/after_cleaning"  # Path for the output directory after cleaning
 
 # Load the merged dataset (use relative path)
 merged_data <- read_csv(file.path(input_dir, "cleaned_merged_tvseries.csv"))
@@ -15,7 +15,6 @@ glimpse(merged_data)
 linear_model <- lm(averageRating ~ episode_count + isAdult, data = merged_data)
 
 # Output the summary of the model
-output_dir <- "gen/output/after_cleaning"
 if (!dir.exists(output_dir)) {
   dir.create(output_dir, recursive = TRUE)
 }

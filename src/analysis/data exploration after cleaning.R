@@ -2,8 +2,9 @@
 library(tidyverse)
 
 # Define relative paths for input and output directories
-input_dir <- "gen/temp"  # Relative path to the cleaned merged data
-output_dir <- "gen/output/after_cleaning"  # Relative path for the output directory
+input_dir <- "../../gen/temp"  # Path to the cleaned merged data in the temp directory
+output_dir <- "../../gen/output/after_cleaning"  # Path for the output directory after cleaning
+
 
 # Create output directory if it doesn't exist
 if (!dir.exists(output_dir)) {

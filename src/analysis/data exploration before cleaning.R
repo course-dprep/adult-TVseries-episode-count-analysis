@@ -7,9 +7,8 @@ library(kableExtra)
 # Uncomment and modify the following line if you need to explicitly set your working directory
 # setwd("path/to/your/project")
 
-# Define relative paths for the input and output directories
-input_dir <- "data"
-output_dir <- "gen/output/before_cleaning"
+input_dir <- "../../data"  # Path to the 'data' directory in the root
+output_dir <- "../../gen/output/before_cleaning"  # Output directory for plots before cleaning
 
 # Create the output directory if it doesn't exist
 if (!dir.exists(output_dir)) {
