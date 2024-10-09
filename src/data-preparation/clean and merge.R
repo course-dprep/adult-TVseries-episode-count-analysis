@@ -1,16 +1,12 @@
-# Load required packages
+#required packages
 library(tidyverse)
 
-# Set relative paths for input and output
-input_dir <- "../../data"  # Path to the 'data' directory in the root
-output_dir <- "../../gen/temp"  # Output directory for cleaned merged data
+#relative paths
+input_dir <- "../../data"  
+output_dir <- "../../gen/temp"  
 
-# Create the output directory if it doesn't exist
-if (!dir.exists(output_dir)) {
-  dir.create(output_dir, recursive = TRUE)
-}
 
-# Load datasets from the data directory using relative paths
+# Load datasets from the data 
 title_basics <- read_delim(file.path(input_dir, "title_basics.csv"), delim = '\t', na = '\\N')
 title_ratings <- read_delim(file.path(input_dir, "title_ratings.csv"), delim = '\t', na = '\\N')
 title_episodes <- read_delim(file.path(input_dir, "title_episodes.csv"), delim = '\t', na = '\\N')
@@ -22,20 +18,20 @@ title_episodes <- read_delim(file.path(input_dir, "title_episodes.csv"), delim =
 tvseries <- title_basics %>%
   filter(titleType == "tvSeries") %>%
   select(tconst, primaryTitle, isAdult) %>%
-  drop_na()  # Remove rows with missing values
+  drop_na()  
 
 # Summarize episode counts and rename column for merging
 episode_counts <- title_episodes %>%
   group_by(parentTconst) %>%
   summarise(episode_count = n()) %>%
   rename(tconst = parentTconst) %>%
-  drop_na()  # Remove rows with missing values
+  drop_na()  
 
 # Filter ratings for titles with at least 25 votes
 title_ratings_clean <- title_ratings %>%
   select(tconst, averageRating, numVotes) %>%
   filter(numVotes >= 25) %>%
-  drop_na()  # Remove rows with missing values
+  drop_na()  
 
 # Merge datasets
 
