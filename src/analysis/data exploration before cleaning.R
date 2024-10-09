@@ -1,21 +1,15 @@
-# Load required packages
+#required packages
 library(tidyverse)
 library(reshape2)
 library(kableExtra)
 
-# Set the working directory to the root of your project
-# Uncomment and modify the following line if you need to explicitly set your working directory
-# setwd("path/to/your/project")
 
-input_dir <- "../../data"  # Path to the 'data' directory in the root
-output_dir <- "../../gen/output/before_cleaning"  # Output directory for plots before cleaning
+input_dir <- "../../data" 
+output_dir <- "../../gen/output/before_cleaning"  
 
-# Create the output directory if it doesn't exist
-if (!dir.exists(output_dir)) {
-  dir.create(output_dir, recursive = TRUE)
-}
 
-# Load datasets from the saved CSV files (use relative paths)
+
+#Load datasets from the saved CSV files in data
 title_basics <- read_delim(file.path(input_dir, "title_basics.csv"), delim = '\t', na = '\\N')
 title_ratings <- read_delim(file.path(input_dir, "title_ratings.csv"), delim = '\t', na = '\\N')
 title_episodes <- read_delim(file.path(input_dir, "title_episodes.csv"), delim = '\t', na = '\\N')
@@ -73,13 +67,13 @@ ggplot(episode_distribution, aes(x = episode_category, y = count, fill = episode
   theme_minimal()
 dev.off()
 
-# Save adult content table as PDF
+#adult content table as PDF
 pdf(file = file.path(output_dir, "table_adult_content.pdf"))
 kable(adult_distribution, caption = "Number of Titles by Adult Content Classification") %>%
   kable_styling()
 dev.off()
 
-# Save vote distribution table as PDF
+#vote distribution table as PDF
 pdf(file = file.path(output_dir, "table_episode_distribution.pdf"))
 kable(episode_distribution, caption = "Number of TV Series per Episode Category") %>%
   kable_styling()

@@ -1,17 +1,12 @@
-# Load required packages
+#required packages
 library(tidyverse)
 
-# Define relative paths for input and output directories
-input_dir <- "../../gen/temp"  # Path to the cleaned merged data in the temp directory
-output_dir <- "../../gen/output/after_cleaning"  # Path for the output directory after cleaning
+#relative paths for input and output directories
+input_dir <- "../../gen/temp"  
+output_dir <- "../../gen/output/after_cleaning"  
 
 
-# Create output directory if it doesn't exist
-if (!dir.exists(output_dir)) {
-  dir.create(output_dir, recursive = TRUE)
-}
-
-# Load the merged dataset (use relative path)
+#Load the merged dataset
 merged_data <- read_csv(file.path(input_dir, "cleaned_merged_tvseries.csv"))
 
 # Plot 1: Scatterplot - Number of Episodes vs. Average Rating
@@ -28,7 +23,7 @@ ggplot(merged_data, aes(x = episode_count, y = averageRating, color = as.factor(
   theme_minimal()
 dev.off()
 
-# Plot 2: Boxplot - Average Rating by Adult Content (Faceted by Episode Count Categories)
+# Plot 2: Boxplot - Average Rating by Adult Content 
 pdf(file = file.path(output_dir, "boxplot_rating_by_adult_content_with_episode_labels.pdf"))
 ggplot(merged_data, aes(x = as.factor(isAdult), y = averageRating, fill = as.factor(isAdult))) +
   geom_boxplot() +
@@ -43,7 +38,7 @@ ggplot(merged_data, aes(x = as.factor(isAdult), y = averageRating, fill = as.fac
   facet_wrap(~ cut(episode_count, 
                    breaks = c(0, 10, 50, 100, Inf), 
                    labels = c("0-10 episodes", "11-50 episodes", "51-100 episodes", "100+ episodes"))) +
-  theme(strip.text = element_text(size = 12, face = "bold"))  # Make facet labels stand out
+  theme(strip.text = element_text(size = 12, face = "bold")) 
 dev.off()
 
 
