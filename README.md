@@ -17,31 +17,18 @@ A multiple linear regression will be the applied research method, with average s
 ## Repository overview
 
 ├── data
-
 ├── gen
-
   ├── input
-
   ├── output
-
     ├──after_cleaning
-
     ├──before_cleaning
-
   ├──temp 
-
 ├── src 
-
   ├── analysis
-
-│ ├── data-preparation 
-
+│ ├── data-preparation
 ├── .gitignore 
-
 ├── LICENSE
-
-├── README.md 
-
+├── README.md
 └── makefile
 
 ## Dependencies
