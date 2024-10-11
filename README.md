@@ -17,19 +17,31 @@ A multiple linear regression will be the applied research method, with average s
 ## Repository overview
 
 ├── data
+
 ├── gen
+
   ├── input
-│ ├── output
+
+  ├── output
+
     ├──after_cleaning
+
     ├──before_cleaning
-│ ├──temp 
+
+  ├──temp 
+
 ├── src 
-│ ├── analysis
+
+  ├── analysis
+
 │ ├── data-preparation 
-│ 
+
 ├── .gitignore 
+
 ├── LICENSE
+
 ├── README.md 
+
 └── makefile
 
 ## Dependencies
@@ -58,7 +70,7 @@ git clone https://github.com/course-dprep/adult-TVseries-episode-count-analysis
 make
 ```
 -Lastly, to clean the data of all raw and unnecessary data files that are created during the pipeline, run this code in git bash:
- 
+
 ```
 make clean
 ```
