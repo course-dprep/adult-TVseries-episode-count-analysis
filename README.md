@@ -16,12 +16,52 @@ A multiple linear regression will be the applied research method, with average s
 
 ## Repository overview
 
-~~
+├── data
+├── gen
+  ├── input
+│ ├── output
+    ├──after_cleaning
+    ├──before_cleaning
+│ ├──temp 
+├── src 
+│ ├── analysis
+│ ├── data-preparation 
+│ 
+├── .gitignore 
+├── LICENSE
+├── README.md 
+└── makefile
 
+## Dependencies
+
+Make sure you have installed R and make correctly, you can follow the installation guides by clicking on these links:
+-R and Rstudio: https://tilburgsciencehub.com/topics/computer-setup/software-installation/rstudio/r/ 
+-make: https://tilburgsciencehub.com/topics/automation/automation-tools/makefiles/make/
+
+For R the following packages are used:
+```
+install.packages("tidyverse")
+install.packages("reshape2")
+install.packages("kableExtra")
+```
 ## Running instructions
 
-~~
+Running the code with make
 
+-First, fork the repository of this project
+-Second, copy the url of the main page of the repository and run the following code in git bash.
+```
+git clone https://github.com/course-dprep/adult-TVseries-episode-count-analysis
+```
+-Then, make sure you're in the right working directory, in this case open git bash in the "adult-TVseries-episode-count-analysis" folder. When opened, run this command:
+```
+make
+```
+-Lastly, to clean the data of all raw and unnecessary data files that are created during the pipeline, run this code in git bash:
+ 
+```
+make clean
+```
 
 ## Resources
 #### IMDB datasets
