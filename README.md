@@ -42,6 +42,7 @@ For R the following packages are used:
 install.packages("tidyverse")
 install.packages("reshape2")
 install.packages("kableExtra")
+install.packages("gridExtra")
 ```
 ## Running instructions
 
