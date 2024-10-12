@@ -1,5 +1,3 @@
-# Root Makefile
-
 all: analysis data-preparation
 
 # Calls the Makefile in src/data-preparation
@@ -16,4 +14,5 @@ clean:
 	rm -rf gen/output/before_cleaning/*.pdf
 	rm -rf gen/output/after_cleaning/*.pdf gen/output/after_cleaning/*.txt
 	rm -rf data/*.csv
+
 

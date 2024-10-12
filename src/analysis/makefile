@@ -4,7 +4,7 @@ OUTPUT_BEFORE = ../../gen/output/before_cleaning
 OUTPUT_AFTER = ../../gen/output/after_cleaning
 
 # Default target for analysis
-all: before_cleaning after_cleaning linear_regression
+all: before_cleaning after_cleaning
 
 # Target for before cleaning analysis (generate before cleaning plots)
 before_cleaning: $(OUTPUT_BEFORE)/plot_adult_content_classification.pdf $(OUTPUT_BEFORE)/plot_average_ratings_distribution.pdf $(OUTPUT_BEFORE)/plot_episode_distribution.pdf
@@ -28,8 +28,3 @@ $(OUTPUT_AFTER):
 $(OUTPUT_AFTER)/scatterplot_episodes_vs_rating.pdf $(OUTPUT_AFTER)/boxplot_rating_by_adult_content_with_episode_labels.pdf: $(TEMP)/cleaned_merged_tvseries.csv | $(OUTPUT_AFTER)
 	R --vanilla < data\ exploration\ after\ cleaning.R
 
-# Target for linear regression analysis
-linear_regression: $(OUTPUT_AFTER)/linear_regression_summary.txt
-
-$(OUTPUT_AFTER)/linear_regression_summary.txt: $(TEMP)/cleaned_merged_tvseries.csv linear_regression.R | $(OUTPUT_AFTER)
-	R --vanilla < linear_regression.R
