@@ -2,6 +2,7 @@
 library(tidyverse)
 library(reshape2)
 library(kableExtra)
+library(gridExtra)
 
 
 input_dir <- "../../data" 
@@ -67,15 +68,13 @@ ggplot(episode_distribution, aes(x = episode_category, y = count, fill = episode
   theme_minimal()
 dev.off()
 
-#adult content table as PDF
+# Save adult content table as PDF using gridExtra
 pdf(file = file.path(output_dir, "table_adult_content.pdf"))
-kable(adult_distribution, caption = "Number of Titles by Adult Content Classification") %>%
-  kable_styling()
+grid.table(adult_distribution)
 dev.off()
 
-#vote distribution table as PDF
+# Save episode distribution table as PDF using gridExtra
 pdf(file = file.path(output_dir, "table_episode_distribution.pdf"))
-kable(episode_distribution, caption = "Number of TV Series per Episode Category") %>%
-  kable_styling()
+grid.table(episode_distribution)
 dev.off()
 
