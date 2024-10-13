@@ -43,6 +43,9 @@ tvseries_with_episodes <- tvseries %>%
 tv_series_with_ratings <- tvseries_with_episodes %>%
   inner_join(title_ratings_clean, by = "tconst")
 
+# Add interaction variable (episode_count * isAdult)
+tv_series_with_ratings <- tv_series_with_ratings %>%
+  mutate(interaction_episode_isAdult = episode_count * isAdult)
+
 # Save the merged data to the temp directory
 write_csv(tv_series_with_ratings, file.path(output_dir, "cleaned_merged_tvseries.csv"))
-

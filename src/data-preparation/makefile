@@ -18,6 +18,6 @@ $(DATA)/title_episodes.csv: download.R
 	R --vanilla < download.R
 
 # Target for cleaning and merging the data
-$(TEMP)/cleaned_merged_tvseries.csv: $(DATA)/title_basics.csv $(DATA)/title_ratings.csv $(DATA)/title_episodes.csv clean\ and\ merge.R
+$(TEMP)/cleaned_merged_tvseries.csv: $(DATA)/title_basics.csv $(DATA)/title_ratings.csv $(DATA)/title_episodes.csv clean_and_merge.R
 	R -e "dir.create('../../gen/temp', recursive = TRUE)"
-	R --vanilla < clean\ and\ merge.R
+	R --vanilla < clean_and_merge.R
