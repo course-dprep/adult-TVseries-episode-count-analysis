@@ -12,7 +12,16 @@ A multiple linear regression will be the applied research method, with average s
 
 ## Results
 
-~~
+After conducting the multiple linear regression on our data, the variable coefficients have been identified as listed below:
+
+- Episode count: -0.0003077*
+- Adult title: -0.2968*
+- episodesXadult: 0.0003865
+
+*significant at the 0.05 level
+
+Using this data to answer the research question, we establish that the total number of episodes has a significant and negative effect on a TV show's average rating. Although ratings appear to be significantly and negatively affected when a movie is of the adult genre, a difference in effect size of episode count between adult and non-adult titles could not be esatblished due to the insignificance of the episodesXadult variable. 
+
 
 ## Repository overview
 
