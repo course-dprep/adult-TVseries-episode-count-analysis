@@ -18,7 +18,4 @@ model_summary <- summary(model)
 summary_file <- file.path(output_dir, "linear_regression_summary.txt")
 capture.output(model_summary, file = summary_file)
 
-# Additionally, save a detailed coefficient table as a CSV file
-coef_table <- as.data.frame(coef(model))
-write_csv(coef_table, file.path(output_dir, "linear_regression_coefficients.csv"))
 

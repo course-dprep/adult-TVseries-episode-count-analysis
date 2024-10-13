@@ -32,8 +32,8 @@ $(OUTPUT_AFTER)/scatterplot_episodes_vs_rating.pdf $(OUTPUT_AFTER)/boxplot_ratin
 	R --vanilla < data_exploration_after_cleaning.R
 
 # Target for performing linear regression analysis
-regression_analysis: $(OUTPUT_AFTER)/linear_regression_summary.txt $(OUTPUT_AFTER)/linear_regression_coefficients.csv
+regression_analysis: $(OUTPUT_AFTER)/linear_regression_summary.txt
 
 # Perform the regression analysis and save results
-$(OUTPUT_AFTER)/linear_regression_summary.txt $(OUTPUT_AFTER)/linear_regression_coefficients.csv: $(TEMP)/cleaned_merged_tvseries.csv | $(OUTPUT_AFTER)
+$(OUTPUT_AFTER)/linear_regression_summary.txt: $(TEMP)/cleaned_merged_tvseries.csv | $(OUTPUT_AFTER)
 	R --vanilla < linear_regression.R
