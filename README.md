@@ -27,7 +27,6 @@ Using this data to answer the research question, we establish that the total num
 
 - data
 - gen
-  - input
   - output
     - after_cleaning
     - before_cleaning
