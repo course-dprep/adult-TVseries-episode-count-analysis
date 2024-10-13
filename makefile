@@ -4,7 +4,7 @@ all: analysis data-preparation
 data-preparation:
 	make -C src/data-preparation
 
-# Calls the Makefile in src/analysis, which now includes regression analysis
+# Calls the Makefile in src/analysis
 analysis: data-preparation
 	make -C src/analysis
 
