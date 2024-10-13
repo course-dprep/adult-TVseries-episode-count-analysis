@@ -13,7 +13,7 @@ before_cleaning: $(OUTPUT_BEFORE)/plot_adult_content_classification.pdf $(OUTPUT
 
 # Create output directory if it doesn't exist
 $(OUTPUT_BEFORE):
-	R -e "dir.create('../../gen/output/before_cleaning', recursive = TRUE)
+	R -e "dir.create('../../gen/output/before_cleaning', recursive = TRUE)"
 
 # Generate before cleaning plots
 $(OUTPUT_BEFORE)/plot_adult_content_classification.pdf $(OUTPUT_BEFORE)/plot_average_ratings_distribution.pdf $(OUTPUT_BEFORE)/plot_episode_distribution.pdf: $(DATA)/title_basics.csv $(DATA)/title_ratings.csv $(DATA)/title_episodes.csv | $(OUTPUT_BEFORE)
