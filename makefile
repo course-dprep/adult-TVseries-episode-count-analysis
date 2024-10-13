@@ -1,6 +1,3 @@
-# Root Makefile
-
-# Default target
 all: analysis data-preparation
 
 # Calls the Makefile in src/data-preparation
@@ -15,5 +12,6 @@ analysis: data-preparation
 clean:
 	R -e "unlink('data', recursive = TRUE)"
 	R -e "unlink('gen', recursive = TRUE)"
+
 
 
