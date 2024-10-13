@@ -1,4 +1,4 @@
-# IMDB How many episodes should you make?
+# TV show episodes, the more the merrier?
 As television shows are a popular form of entertainment, understanding the factors that influence their success is essential for networks, producers, etc. This research explores the relationship between the number of episodes in a TV show and its average rating, while also examining whether this relationship varies between adult and non-adult titles. With this information, key stakeholders in the film industry can make more informed decisions about, for example, whether to allocate resources to extend an existing TV show or instead to initiate production on a new one.
 
 ## Research question
@@ -24,12 +24,6 @@ Using this data to answer the research question, we establish that the total num
 
 ## Repository overview
 
-- data
-- gen
-  - output
-    - after_cleaning
-    - before_cleaning
-  - temp 
 - src 
   - analysis
   - data-preparation
@@ -79,7 +73,7 @@ https://datasets.imdbws.com/title.ratings.tsv.gz
 ## About 
 #### Authors
 Team 7:  
-- [Martijn Hendriks](https://github.com/MartijnHendriks),     e-mail: m.hendriks@tilburguniversity.edu  
-- [Mauro de Kort](https://github.com/Maurodekort),            e-mail: m.dekort_3@tilburguniversity.edu  
-- [Sem Niezink](https://github.com/semniezinktil),            e-mail: s.d.niezink@tilburguniversity.edu  
-- [Ruben van der Thiel](https://github.com/rubenvanderthiel), e-mail: r.r.t.vdrthiel@tilburguniversity.edu  
+- [Martijn Hendriks](https://github.com/MartijnHendriks),     e-mail: m.hendriks@tilburguniversity.edu, SNR: 2081658
+- [Mauro de Kort](https://github.com/Maurodekort),            e-mail: m.dekort_3@tilburguniversity.edu, SNR: 2056249
+- [Sem Niezink](https://github.com/semniezinktil),            e-mail: s.d.niezink@tilburguniversity.edu,  SNR: 2148801
+- [Ruben van der Thiel](https://github.com/rubenvanderthiel), e-mail: r.r.t.vdrthiel@tilburguniversity.edu, SNR: 2073510  
